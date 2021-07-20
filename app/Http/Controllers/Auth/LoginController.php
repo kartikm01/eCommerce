@@ -20,9 +20,9 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    public function redirectTo() {
-        return "/products_home";
-    }
+    // public function redirectTo() {
+    //     return "/products_home";
+    // }
 
     /**
      * Where to redirect users after login.

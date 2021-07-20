@@ -16,7 +16,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -28,7 +28,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ url('/home') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
@@ -122,5 +122,26 @@
 
     .navbar-collapse .navbar-nav .dropdown .dropdown-menu .nav-link-pro{
         color: blue;
+    }
+
+    img.img-slider{
+        height: 400px !important
+    }
+
+    /* .carousel-caption {
+        background-color: rgb(174, 196, 174);
+    } */
+
+    .img-trending {
+        height: 100px;
+    }
+
+    .item-trending {
+        float: left;
+        width: 25%;
+    }
+
+    .register-button {
+        padding-top: 10px;
     }
 </style>

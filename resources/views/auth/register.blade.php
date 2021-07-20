@@ -146,13 +146,15 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="isseller" class="col-md-4 control-label">Register as a seller?</label>
                             <div class="col-md-6">
                             {{ csrf_field() }}
-                            <label for="isseller" class="col-md-4 control-label">Register as a seller as well?</label>
-                              <select class="form-control col-md-6" id="isseller" name="isseller">
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                              </select>
+                                <div class="select-menu">
+                                    <select class="form-control col-md-6" id="isseller" name="isseller">
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
 

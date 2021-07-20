@@ -59,8 +59,13 @@
                                     Forgot Your Password?
                                 </a>
                             </div>
+                            <div class="register-button col-md-8 col-md-offset-4">
+                                <a class="btn btn-primary mt-3" href="{{ url("/register") }}">Register</a> here if not already.
+                            </div>
                         </div>
                     </form>
+
+                    {{-- <div class="form-control"><a class="btn btn-primary" href="{{ url("/register") }}">Register</a> here if not already.</div> --}}
                 </div>
             </div>
         </div>
