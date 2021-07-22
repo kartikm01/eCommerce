@@ -35,10 +35,13 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    {{-- <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul> --}}
-
+                    
+                        <form method="GET" action="{{ url("/search") }}" class="navbar-form navbar-left">
+                            <input class="search-box form-control me-3" name="search" type="search" placeholder="Search for a product" aria-label="Search">
+                            <button class="btn btn-warning" type="submit">Search</button>
+                        </form>
+                  
+                    
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
@@ -46,8 +49,8 @@
                             <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
                         @else
-                            <li><a class="nav-link" href="#">Orders</a></li>
-                            <li><a class="nav-link" href="#">MyCart</a></li>
+                            <li><a class="nav-link" href="{{ url("/orders") }}">Orders</a></li>
+                            <li><a class="nav-link" href="{{ url("/MyCart") }}">MyCart</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -143,5 +146,25 @@
 
     .register-button {
         padding-top: 10px;
+    }
+
+    .detail-img {
+        height: 250px; 
+    }
+
+    .search-box {
+        width: 400px !important
+    }
+
+    .cart-button{
+        margin-left: 10px;
+    }
+
+    .buy-cart {
+        display: flex;
+    }
+
+    .checkout-button {
+
     }
 </style>

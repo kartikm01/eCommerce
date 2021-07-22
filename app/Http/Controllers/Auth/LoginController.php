@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Http\Controllers\Auth\Request;
 
 class LoginController extends Controller
 {
@@ -20,16 +21,19 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    // public function redirectTo() {
-    //     return "/products_home";
-    // }
+    public function redirectTo() {
+        if(\Auth::guest()) {
+            return "/login";
+        } 
+        return "/home";
+    }
 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    // protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -40,4 +44,6 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+
 }

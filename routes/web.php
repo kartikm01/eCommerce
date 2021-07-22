@@ -22,4 +22,16 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get("/products_home", "ProductController@index");
+Route::get("/detail/{id}", "ProductController@detail");
+
+Route::get("/search", "ProductController@search");
+
+Route::middleware('auth')->group(function() {
+    Route::get("/checkout", "ProductController@checkoutForm");
+    Route::post("/cart", "ProductController@addToCart");
+    Route::post("/remove", "ProductController@removeFromCart");
+    Route::get("/MyCart", "ProductController@cartItems");
+    Route::get("/orders", "ProductController@getAllOrders");
+});
+
+

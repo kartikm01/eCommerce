@@ -1,27 +1,3 @@
-{{-- @extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection --}}
-
 @extends('layouts.app')
 
 @section('content')
@@ -36,15 +12,18 @@
       
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-          @foreach ($data as $item)
-            <div class="item {{$item->id == 1?'active':''}}">
-                <img class="img-slider" src="{{$item->image}}" alt="image">
+          @for ($i = 0; $i < 4; $i++)
+            <div class="item {{$data[$i]->id == 1?'active' : ''}}">
+              <a href="detail/{{$data[$i]->id}}">
+                <img class="img-slider" src="{{$data[$i]->image}}" alt="image">
                 <div class="carousel-caption">
-                <h3 class="item-details">{{$item->name}}</h3>
-                <p class="item-details">{{$item->description}}</p>
-                </div>
+                  <h3 class="item-details">{{$data[$i]->name}}</h3>
+                  <p class="item-details">{{$data[$i]->description}}</p>
+                </div>  
+              </a>  
             </div>
-          @endforeach
+          @endfor
+            
       
         <!-- Left and right controls -->
         <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -60,11 +39,13 @@
         <h3>Trending Products</h3>
         @foreach ($data as $item)
             <div class="item-trending">
+              <a href="detail/{{$item->id}}">
                 <img class="img-trending" src="{{$item->image}}" alt="image">
                 <div class="">
                 <h3 class="item-details">{{$item->name}}</h3>
                 {{-- <p class="item-details">{{$item->description}}</p> --}}
                 </div>
+              </a>
             </div>
         @endforeach
     </div>
