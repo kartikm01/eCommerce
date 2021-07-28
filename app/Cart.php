@@ -40,4 +40,12 @@ class Cart extends Model
             return false;
         }
     }
+
+    public static function makeCartEmpty() {
+        $query = Cart::where("user_id", Auth::id())->delete();
+        if(!$query) {
+            return false;
+        } 
+        return true;
+    }
 }

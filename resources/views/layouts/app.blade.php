@@ -137,7 +137,7 @@
 
     .item-trending {
         float: left;
-        width: 25%;
+        width: 20%;
     }
 
     .register-button {

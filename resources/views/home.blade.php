@@ -13,16 +13,18 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
           @for ($i = 0; $i < 4; $i++)
-            <div class="item {{$data[$i]->id == 1?'active' : ''}}">
-              <a href="detail/{{$data[$i]->id}}">
-                <img class="img-slider" src="{{$data[$i]->image}}" alt="image">
-                <div class="carousel-caption">
-                  <h3 class="item-details">{{$data[$i]->name}}</h3>
-                  <p class="item-details">{{$data[$i]->description}}</p>
-                </div>  
-              </a>  
-            </div>
-          @endfor
+            {{-- <div class="item {{$slider_products[$i]->id == 1?'active' : ''}}"> --}}
+              <div class="item {{$slider_products[$i]->id == 1?'active' : ''}}">
+                <a href="detail/{{$slider_products[$i]->id}}">
+                  <img class="img-slider" src="{{$slider_products[$i]->image}}" alt="image">
+                  <div class="carousel-caption">
+                    <h3 class="item-details">{{$slider_products[$i]->name}}</h3>
+                    <p class="item-details">{{$slider_products[$i]->description}}</p>
+                  </div>  
+                </a>
+              </div>
+              @endfor
+          </div>  
             
       
         <!-- Left and right controls -->
@@ -35,6 +37,7 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+
       <div class="trending-wrapper">
         <h3>Trending Products</h3>
         @foreach ($data as $item)
@@ -43,12 +46,13 @@
                 <img class="img-trending" src="{{$item->image}}" alt="image">
                 <div class="">
                 <h3 class="item-details">{{$item->name}}</h3>
-                {{-- <p class="item-details">{{$item->description}}</p> --}}
                 </div>
               </a>
             </div>
         @endforeach
     </div>
-</div>
+  </div>
+    <center>{{$data->links()}}</center>
+
 </div>
 @endsection

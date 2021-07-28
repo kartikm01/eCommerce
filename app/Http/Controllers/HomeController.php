@@ -24,7 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data = Product::all();
-        return view('home', compact("data"));
+        $data = Product::paginate(5);
+        $slider_products = Product::all();
+        return view('home', compact("data", "slider_products"));
     }
 }

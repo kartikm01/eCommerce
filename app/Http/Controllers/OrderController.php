@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Order;
 use App\OrderProduct;
+use App\Cart;
 
 class OrderController extends Controller
 {
@@ -18,7 +19,12 @@ class OrderController extends Controller
         $delivery_address = $request->input("delivery_address");
         $payment_mode = ($request->input("radio") == "online") ? "Online" : "COD";
         Order::insertInOrder($bill_amount, $delivery_address, $payment_mode);
-        return view("final_checkout");
+        $deletedOrNot = Cart::makeCartEmpty();
+        if($deletedOrNot) {
+            return view("Checkout.final_checkout");
+        } else {
+            return "You have nothing in your cart.";
+        }
     }
 
     public function viewOrderDetails(Request $request) {

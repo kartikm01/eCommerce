@@ -26,6 +26,8 @@ Route::get("/detail/{id}", "ProductController@detail");
 
 Route::get("/search", "ProductController@search");
 
+Route::get("/test", "ProductController@test");
+
 
 Route::middleware('auth')->group(function() { 
     Route::get("/checkout/order_summary", "ProductController@checkoutOrderSummary");
