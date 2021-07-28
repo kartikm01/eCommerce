@@ -26,12 +26,17 @@ Route::get("/detail/{id}", "ProductController@detail");
 
 Route::get("/search", "ProductController@search");
 
-Route::middleware('auth')->group(function() {
-    Route::get("/checkout", "ProductController@checkoutForm");
-    Route::post("/cart", "ProductController@addToCart");
-    Route::post("/remove", "ProductController@removeFromCart");
-    Route::get("/MyCart", "ProductController@cartItems");
-    Route::get("/orders", "ProductController@getAllOrders");
+
+Route::middleware('auth')->group(function() { 
+    Route::get("/checkout/order_summary", "ProductController@checkoutOrderSummary");
+    Route::get("/place_order", "OrderController@place_order");
+    Route::get("/checkout", "ProductController@checkoutDetailsForm");
+    Route::post("/cart", "CartController@addToCart");
+    Route::post("/remove", "CartController@removeFromCart");
+    Route::get("/MyCart", "CartController@cartItems");
+    Route::get("/orders", "OrderController@getAllOrders");
+    Route::get("/checkoutForm", "ProductController@checkoutForm");
+    Route::get("/view_order_details", "OrderController@viewOrderDetails");
 });
 
 

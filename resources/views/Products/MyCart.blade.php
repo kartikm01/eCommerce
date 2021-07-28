@@ -32,8 +32,8 @@
          <?php $total += $item->price * $item->quantity; ?>
         @endforeach
         <h2>Order Total (excl. of taxes): {{ $total }}</h2>
-        <button href="{{ url("/checkout") }}" class="checkout-button btn btn-success">Checkout</button>
+        <a href="{{ url("/checkout") }}" class="checkout-button btn btn-success">Checkout</a>
     @endif
 </div>
-    
+
 @endsection

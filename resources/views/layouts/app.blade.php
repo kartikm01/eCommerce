@@ -131,10 +131,6 @@
         height: 400px !important
     }
 
-    /* .carousel-caption {
-        background-color: rgb(174, 196, 174);
-    } */
-
     .img-trending {
         height: 100px;
     }
@@ -164,7 +160,38 @@
         display: flex;
     }
 
-    .checkout-button {
+    .checkout-form{
+        float: left;
+    }
 
+    .order-summary-panel{
+        float: right;
+        margin-right: 200px;
+        margin-top: 10px;
+        background-color: white;
+    }
+
+    .summary-img{
+        height: 100px;
+        margin-left: 30px;
+    }
+
+    .item-description{
+        font-size: 15px;
+    }
+
+    .checkout-form{
+        margin-left: 50px;
+    }
+
+    .final-checkout-buttons{
+        position: absolute;
+        bottom: 50px;
+        width: 100%;
+        display: flex;
+    }
+
+    .place-order-button {
+        margin-left: 20px;
     }
 </style>
