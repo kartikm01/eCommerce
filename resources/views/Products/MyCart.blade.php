@@ -36,4 +36,30 @@
     @endif
 </div>
 
+<script type="text/javascript" 
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+	<script type="text/javascript">
+        $(document).ready(function () {
+			
+		 $('#ajaxBtn').click(function(){
+			
+			var ajaxReq = $.ajax('http://localhost/kartikmaggo/test/public/remove', {
+                    dataType: 'json',
+                    timeout: 500,
+                    type: "POST"
+                });
+
+                ajaxReq.success(function (data, status, jqXhr) {
+					$('p').append(data.firstName + ' ' + data.middleName + ' ' + data.lastName);
+                });
+                
+                ajaxReq.error(function (jqXhr, textStatus, errorMessage) {
+					$('p').append('Error: ' + errorMessage);
+                });
+			});
+
+        });
+    </script>
+
 @endsection

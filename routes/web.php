@@ -30,15 +30,13 @@ Route::get("/test", "ProductController@test");
 
 
 Route::middleware('auth')->group(function() { 
-    Route::get("/checkout/order_summary", "ProductController@checkoutOrderSummary");
-    Route::get("/place_order", "OrderController@place_order");
-    Route::get("/checkout", "ProductController@checkoutDetailsForm");
+    Route::get("/checkout", "CheckoutController@checkoutDetailsForm");
     Route::post("/cart", "CartController@addToCart");
     Route::post("/remove", "CartController@removeFromCart");
     Route::get("/MyCart", "CartController@cartItems");
     Route::get("/orders", "OrderController@getAllOrders");
-    Route::get("/checkoutForm", "ProductController@checkoutForm");
     Route::get("/view_order_details", "OrderController@viewOrderDetails");
+    Route::get("/place_order", "OrderController@place_order");
 });
 
 

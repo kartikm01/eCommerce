@@ -17,7 +17,7 @@
                 <h2>{{ $item->description }}</h2>
                 <h3>Price: Rs. {{ $item->price }}</h3><br>
                 <div class="buy-cart">
-                    <button href="{{ url("/checkout") }}" id="button1" class="buy-button btn btn-success">Buy Now</button>
+                    <a href="{{ url("/checkout") }}" id="button1" class="buy-button btn btn-success">Buy Now</a>
                     <form method="POST" action="{{ url("/cart") }}">
                         {{ csrf_field() }}
                         <input type="hidden" name="current_product_id" value="{{ $item->id }}">

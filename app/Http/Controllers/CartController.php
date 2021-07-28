@@ -14,9 +14,8 @@ class CartController extends Controller
             return redirect("/home");
         } else {
             Cart::putInCart($current_product_id);
-            return redirect("/home");
+            return redirect("/MyCart");
         }
-        
     }
 
     public function cartItems() {
