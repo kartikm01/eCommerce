@@ -10,7 +10,9 @@ class Product extends Model
         return Product::where("id", $product_id)->get();
     }
 
-    public static function getProductDetailsByCategory($category) {
-        return Product::where("category", $category)->get();
+    public static function getProductDetailsByCategory($search) {
+        return Product::where("category", "like", "%" . $search . "%")
+                        ->orWhere("name", "like", "%" . $search . "%")
+                        ->orWhere("description", "like", "%" . $search . "%")->get();
     }
 }
