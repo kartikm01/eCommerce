@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container">
-    @if (count($data_of_cat) == 0) 
+    {{-- @if (count($data_of_cat) == 0) 
         <h1 class="text-align: center">No Results Available!!</h1>
-    @endif
+    @endif --}}
     @foreach ($data_of_cat as $item)
         <div class="row">
             <div class="col-sm-6">
@@ -27,7 +27,8 @@
             </div>    
         </div>
         <hr>
-    @endforeach
+        @endforeach
+        {{$data_of_cat->links()}}
 </div>    
 @endsection
 

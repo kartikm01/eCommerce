@@ -11,8 +11,14 @@ class Product extends Model
     }
 
     public static function getProductDetailsByCategory($search) {
-        return Product::where("category", "like", "%" . $search . "%")
+        $data_of_cat = Product::where("category", "like", "%" . $search . "%")
                         ->orWhere("name", "like", "%" . $search . "%")
-                        ->orWhere("description", "like", "%" . $search . "%")->get();
+                        ->orWhere("description", "like", "%" . $search . "%")->paginate(4);
+        $data_of_cat->appends(["search" => $search]);
+        return $data_of_cat;
+    }
+
+    public static function getSimilarProducts($category) {
+        return Product::where("category", "like", "%" . $category . "%")->paginate(5);
     }
 }

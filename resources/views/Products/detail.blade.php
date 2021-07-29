@@ -20,5 +20,18 @@
                 </div>
             </div>
         </div>
+
+        <div class="similar-products">
+            <h1>Other {{ $product_detail[0]->category }}s you may like:</h1>
+            @foreach ($similar_products as $item)
+                <div class="products">
+                    <a href="{{$item->id}}">
+                        <img class="similar-prod-img" src="{{ $item->image }}" alt="image">
+                    </a>
+                    <h4 class="similar-prod-name">{{ $item->name }}</h4>
+                </div>
+            @endforeach
+            {{$similar_products}}
+        </div>
     </div>    
 @endsection

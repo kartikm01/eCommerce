@@ -68,11 +68,10 @@
           </div>
         </div>
         
-        <div class="container">
+        
           <div class="final-checkout-buttons" >
             <a href="{{url("/MyCart")}}" class="btn btn-warning">Go Back to Cart</a>
             <button type="submit" class="place-order-button btn btn-success">Place Order</button>  
           </div>
-        </div>
       </form>
       @endsection

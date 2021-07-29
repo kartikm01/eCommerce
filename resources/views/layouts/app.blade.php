@@ -166,8 +166,8 @@
 
     .order-summary-panel{
         float: right;
-        margin-right: 200px;
-        margin-top: 10px;
+        margin-right: 150px;
+        margin-top: 20px;
         background-color: white;
     }
 
@@ -186,12 +186,31 @@
 
     .final-checkout-buttons{
         position: absolute;
-        bottom: 50px;
+        bottom: 300px;
+        left: 282px;
         width: 100%;
         display: flex;
     }
 
     .place-order-button {
         margin-left: 20px;
+    }
+
+    .products{
+        float: left;
+        width: 20%;
+    }
+
+    .similar-prod-img{
+        height: 150px;
+    }
+
+    .similar-products {
+        position: absolute;
+        bottom: 100px;
+    }
+
+    .similar-prod-name{
+        font: bolder;
     }
 </style>

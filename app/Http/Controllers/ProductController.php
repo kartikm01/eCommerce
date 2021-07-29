@@ -8,8 +8,13 @@ use App\Product;
 class ProductController extends Controller
 {
     public function detail($id) {
+        // if(!is_int($id)) {
+        //     return "Sorry!! This URL doesn't exist.";
+        // }
         $product_detail = Product::getProductDetailsByID($id);
-        return view("Products.detail", compact("product_detail")); 
+        $category = $product_detail[0]->category;
+        $similar_products = Product::getSimilarProducts($category);
+        return view("Products.detail", compact("product_detail", "similar_products")); 
     }
 
     public function search(Request $request) {
